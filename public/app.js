@@ -2,6 +2,9 @@
    app.js — Reuni Matek 09
    ============================================================ */
 
+// ---- CONFIG: Masukkan jumlah alumni yang sudah mendaftar di sini ----
+const TOTAL_ALUMNI_PENDAFTAR = 48; // Ganti angka ini sesuai dengan jumlah pendaftar aktual!
+
 // ---- Navbar scroll effect ----
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
@@ -139,4 +142,44 @@ window.addEventListener('scroll', () => {
   navAnchors.forEach(a => {
     a.style.color = a.getAttribute('href') === `#${current}` ? 'var(--gold)' : '';
   });
+});
+
+// ---- Google Form Loader Spinner Dismiss ----
+const formEmbed = document.getElementById('google-form-embed');
+if (formEmbed) {
+  formEmbed.addEventListener('load', () => {
+    const loadingEl = document.querySelector('.form-loading');
+    if (loadingEl) {
+      loadingEl.classList.add('loaded');
+    }
+  });
+}
+
+// ---- Registration Counter Animation ----
+function animateCounter() {
+  const counterEl = document.getElementById('registered-count');
+  if (!counterEl) return;
+  
+  const end = TOTAL_ALUMNI_PENDAFTAR;
+  if (end === 0) {
+    counterEl.textContent = '0';
+    return;
+  }
+  
+  const duration = 1200; // ms
+  let start = 0;
+  const stepTime = Math.max(Math.floor(duration / end), 12);
+  
+  const timer = setInterval(() => {
+    start++;
+    counterEl.textContent = start;
+    if (start >= end) {
+      counterEl.textContent = end;
+      clearInterval(timer);
+    }
+  }, stepTime);
+}
+// Trigger counter animation once loaded
+window.addEventListener('DOMContentLoaded', () => {
+  setTimeout(animateCounter, 800);
 });

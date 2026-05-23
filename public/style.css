@@ -102,12 +102,24 @@ img { max-width: 100%; display: block; }
   display: flex; flex-direction: column; align-items: center;
 }
 .hero-image {
-  width: 130px; margin-bottom: 24px;
+  width: 130px;
+  height: 130px;
+  margin-bottom: 24px;
+  background: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25), 0 0 30px rgba(201, 168, 76, 0.3);
+  border: 3px solid var(--gold);
+  animation: float 6s ease-in-out infinite;
 }
 .hero-makara-img {
-  width: 100%; height: auto; object-fit: contain; opacity: 0.95;
-  filter: drop-shadow(0 0 30px rgba(201,168,76,0.25));
-  animation: float 6s ease-in-out infinite;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  opacity: 0.95;
 }
 @keyframes float {
   0% { transform: translateY(0px); }
@@ -173,7 +185,51 @@ img { max-width: 100%; display: block; }
   transition: border-color var(--transition), background var(--transition);
 }
 .btn-ghost:hover { border-color: var(--gold); background: rgba(201,168,76,.08); color: var(--white); }
+.btn-ghost-dark {
+  display: inline-block; padding: 14px 36px;
+  background: transparent; color: var(--navy); font-weight: 600; font-size: .98rem;
+  border-radius: 50px; border: 2px solid rgba(13,27,62,.3);
+  transition: border-color var(--transition), background var(--transition), color var(--transition);
+}
+.btn-ghost-dark:hover { border-color: var(--gold); background: rgba(201,168,76,.08); color: var(--navy); }
 .btn-xl { padding: 18px 48px; font-size: 1.1rem; }
+
+/* Registration Counter Badge */
+.registration-counter {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(201, 168, 76, 0.12);
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  padding: 8px 18px;
+  border-radius: 50px;
+  margin: 20px auto 10px;
+  font-size: 0.95rem;
+  color: var(--white);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.counter-pulse {
+  width: 8px;
+  height: 8px;
+  background-color: #2ecc71;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7);
+  animation: pulse 1.6s infinite;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(46, 204, 113, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(46, 204, 113, 0);
+  }
+}
 
 /* Hero scroll hint */
 .hero-scroll-hint {
@@ -211,6 +267,57 @@ img { max-width: 100%; display: block; }
   color: #555; line-height: 1.75; text-align: center;
 }
 
+/* Tentang Acara - Two Column Layout */
+.about-content {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 48px;
+  align-items: center;
+  margin-bottom: 56px;
+}
+.about-image-wrapper {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(13,27,62,0.12);
+  border: 4px solid var(--gold);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.about-image-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(201,168,76,0.25);
+  pointer-events: none;
+  z-index: 2;
+  border-radius: calc(var(--radius) - 4px);
+}
+.about-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+.about-image-wrapper:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(13,27,62,0.18);
+}
+.about-image-wrapper:hover .about-img {
+  transform: scale(1.03);
+}
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.about-desc {
+  font-size: 1.05rem;
+  color: #4a5468;
+  line-height: 1.8;
+  text-align: justify;
+}
+
 /* ============================================================
    ABOUT CARDS
    ============================================================ */
@@ -224,7 +331,23 @@ img { max-width: 100%; display: block; }
   transition: transform var(--transition), box-shadow var(--transition);
 }
 .about-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(13,27,62,.12); }
-.about-icon { font-size: 2.6rem; margin-bottom: 16px; }
+.about-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about-icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform var(--transition);
+}
+.about-card:hover .about-icon-img {
+  transform: scale(1.1) rotate(4deg);
+}
 .about-card h3 { font-family: var(--font-head); font-size: 1.15rem; color: var(--navy); margin-bottom: 10px; }
 .about-card p { font-size: .92rem; color: #666; line-height: 1.65; }
 
@@ -378,11 +501,52 @@ img { max-width: 100%; display: block; }
 .footer-copy { color: rgba(255,255,255,.25); font-size: .8rem; }
 
 /* ============================================================
+   GOOGLE FORM EMBED
+   ============================================================ */
+.form-wrapper {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 2px solid rgba(201,168,76,0.3);
+  box-shadow: var(--shadow);
+  background: #fff;
+  height: 800px;
+}
+.form-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  z-index: 10;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+.form-loading.loaded {
+  opacity: 0;
+}
+.spinner {
+  width: 45px;
+  height: 45px;
+  border: 4px solid rgba(201,168,76,0.15);
+  border-top-color: var(--gold);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 12px;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width: 992px) {
   .hero-inner { padding: 100px 24px 120px; }
-  .hero-image { width: 110px; margin-bottom: 20px; }
+  .hero-image { width: 110px; height: 110px; margin-bottom: 20px; }
+  .about-content { grid-template-columns: 1fr; gap: 32px; margin-bottom: 40px; }
   
   .nav-links { display: none; flex-direction: column; position: absolute; top: 70px; left: 0; right: 0;
     background: rgba(13,27,62,.98); padding: 20px 24px; gap: 16px; border-top: 1px solid rgba(201,168,76,.2); }
