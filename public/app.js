@@ -58,23 +58,6 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-// ---- FAQ Accordion ----
-document.querySelectorAll('.faq-q').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const isOpen = btn.getAttribute('aria-expanded') === 'true';
-    // Close all
-    document.querySelectorAll('.faq-q').forEach(b => {
-      b.setAttribute('aria-expanded', 'false');
-      b.nextElementSibling.classList.remove('open');
-    });
-    // Toggle current
-    if (!isOpen) {
-      btn.setAttribute('aria-expanded', 'true');
-      btn.nextElementSibling.classList.add('open');
-    }
-  });
-});
-
 // ---- Particle Canvas ----
 const canvas = document.getElementById('particle-canvas');
 const ctx    = canvas.getContext('2d');
@@ -143,17 +126,6 @@ window.addEventListener('scroll', () => {
     a.style.color = a.getAttribute('href') === `#${current}` ? 'var(--gold)' : '';
   });
 });
-
-// ---- Google Form Loader Spinner Dismiss ----
-const formEmbed = document.getElementById('google-form-embed');
-if (formEmbed) {
-  formEmbed.addEventListener('load', () => {
-    const loadingEl = document.querySelector('.form-loading');
-    if (loadingEl) {
-      loadingEl.classList.add('loaded');
-    }
-  });
-}
 
 // ---- Registration Counter Animation ----
 function animateCounter() {
