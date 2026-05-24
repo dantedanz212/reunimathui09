@@ -500,5 +500,46 @@ img { max-width: 100%; display: block; }
   .timeline-time { display: none; }
   .timeline-dot { margin: 4px 0 0; }
   .price-featured { transform: scale(1); }
-  .pricing-cards { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   STATISTICS SECTION
+   ============================================================ */
+.stats-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+.stat-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(201, 168, 76, 0.20);
+  border-radius: var(--radius);
+  padding: 40px 32px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+.stat-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(201, 168, 76, 0.55);
+  box-shadow: 0 12px 40px rgba(201, 168, 76, 0.15);
+}
+.stat-icon {
+  font-size: 2.8rem;
+  margin-bottom: 16px;
+  display: block;
+}
+.stat-value {
+  font-family: var(--font-head);
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+.stat-label {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.6;
 }

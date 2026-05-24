@@ -130,11 +130,13 @@ window.addEventListener('scroll', () => {
 // ---- Registration Counter Animation ----
 function animateCounter() {
   const counterEl = document.getElementById('registered-count');
-  if (!counterEl) return;
+  const statCounterEl = document.getElementById('stat-registered-count');
+  if (!counterEl && !statCounterEl) return;
   
   const end = TOTAL_ALUMNI_PENDAFTAR;
   if (end === 0) {
-    counterEl.textContent = '0';
+    if (counterEl) counterEl.textContent = '0';
+    if (statCounterEl) statCounterEl.textContent = '0';
     return;
   }
   
@@ -144,9 +146,11 @@ function animateCounter() {
   
   const timer = setInterval(() => {
     start++;
-    counterEl.textContent = start;
+    if (counterEl) counterEl.textContent = start;
+    if (statCounterEl) statCounterEl.textContent = start;
     if (start >= end) {
-      counterEl.textContent = end;
+      if (counterEl) counterEl.textContent = end;
+      if (statCounterEl) statCounterEl.textContent = end;
       clearInterval(timer);
     }
   }, stepTime);
