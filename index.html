@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reuni Math UI 09</title>
+  <link rel="icon" type="image/png" href="images/makara_fmipa.png" />
+  <meta name="description"
+    content="Reuni akbar alumni Matematika FMIPA Universitas Indonesia Angkatan 2009. Satu dekade lebih, satu cerita bersama." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=2.0" />
+</head>
+
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <div class="nav-brand">
+        <img src="images/logo_fmipa.png" alt="Logo FMIPA" class="nav-logo" />
+        <div class="brand-3lines">
+          <span>Fakultas <span class="gold">Matematika</span></span>
+          <span>dan Ilmu Pengetahuan</span>
+          <span>Alam</span>
+        </div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#acara">Tentang Acara</a></li>
+        <li><a href="#rundown">Rundown</a></li>
+        <li><a href="#biaya">Biaya dan Cara Daftar</a></li>
+        <li><a href="#lokasi">Lokasi</a></li>
+        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdFpVgBOd-yaCvCnEdMHhne5CD_cT43ufvmAA6pFFX0t64EDw/viewform" target="_blank" rel="noopener noreferrer" class="btn-nav">Daftar</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">&#9776;</button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section id="hero">
+    <div class="hero-overlay"></div>
+    <canvas id="particle-canvas"></canvas>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-image reveal">
+          <img src="images/makara_fmipa.png" alt="Makara 2009" class="hero-makara-img" />
+        </div>
+        <div class="hero-badge reveal">Reuni Akbar &bull; 2026</div>
+        <h1 class="hero-title reveal">
+          17th Friendship of<br />
+          <span class="gold-text">Math UI 2009</span>
+        </h1>
+        <p class="hero-sub reveal">
+          Alumni Matematika FMIPA UI &bull; Angkatan <strong>2009</strong><br />
+          Satu dekade lebih, satu cerita yang tak terlupakan.
+        </p>
+        <div class="hero-meta reveal">
+          <div class="hero-meta-item">
+            <span class="meta-icon">&#128197;</span>
+            <span>Sabtu, 11 Juli 2026</span>
+          </div>
+          <div class="hero-meta-item">
+            <span class="meta-icon">&#128336;</span>
+            <span>10.00 – 13.00 WIB</span>
+          </div>
+          <div class="hero-meta-item">
+            <span class="meta-icon">&#128205;</span>
+            <span>Pondok Laras, Depok</span>
+          </div>
+          <div class="hero-meta-item">
+            <span class="meta-icon">&#128085;</span>
+            <span>Dress Code: Nuansa Coklat</span>
+          </div>
+        </div>
+        <!-- Countdown -->
+        <div class="countdown reveal" id="countdown">
+          <div class="countdown-item"><span id="cd-hari">--</span><label>Hari</label></div>
+          <div class="countdown-sep">:</div>
+          <div class="countdown-item"><span id="cd-jam">--</span><label>Jam</label></div>
+          <div class="countdown-sep">:</div>
+          <div class="countdown-item"><span id="cd-menit">--</span><label>Menit</label></div>
+          <div class="countdown-sep">:</div>
+          <div class="countdown-item"><span id="cd-detik">--</span><label>Detik</label></div>
+        </div>
+        <!-- Registration Counter -->
+        <div class="registration-counter reveal" style="margin-top: 24px; margin-bottom: 12px;">
+          <span class="counter-pulse"></span>
+          <span class="counter-text"><strong id="registered-count">0</strong> Alumni Telah Mendaftar</span>
+        </div>
+        <div class="hero-cta reveal">
+          <a href="#acara" class="btn-primary" id="btn-hero-selengkapnya">Selengkapnya</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ===== TENTANG ACARA ===== -->
+  <section id="acara" class="section-light">
+    <div class="container">
+      <div class="section-tag reveal">Tentang Acara</div>
+      <h2 class="section-title reveal">17th of Friendship Math UI 2009</h2>
+      <div class="about-content reveal">
+        <div class="about-image-wrapper">
+          <img src="images/math09.png" alt="Alumni Math 09" class="about-img" />
+        </div>
+        <div class="about-text">
+          <p class="about-desc">
+            Waktu begitu cepat berlalu sejak kita menginjakkan kaki pertama kali di kampus perjuangan ini. Saatnya kita
+            berkumpul kembali—melepas rindu, berbagi cerita, dan merayakan perjalanan luar biasa kita bersama sebagai
+            alumni
+            <strong>Matematika FMIPA UI 2009</strong>.
+          </p>
+          <p class="about-desc">
+            Dulu kita dipertemukan di departemen Matematika bagaikan variabel-variabel bebas, lalu tumbuh bersama secara
+            exponensial dan membentuk suatu teorema bahwa we are the one. Kini, setelah belasan tahun kita berada dalam
+            divergensi, mari sejenak bertemu kembali ke titik konvergensi. Karena sampai limit waktu tak terhingga,
+            persahabatan Math 09 adalah sebuah konstanta yang takkan pernah berubah.
+          </p>
+        </div>
+      </div>
+      <div class="about-cards reveal">
+        <div class="about-card">
+          <div class="about-icon">
+            <img src="images/family_3d.png" alt="Sesi Nostalgia" class="about-icon-img" />
+          </div>
+          <h3>Sesi Nostalgia</h3>
+          <p>Kenang kembali masa kuliah lewat obrolan hangat, bertukar cerita seru, dan membuka memori lama bersama teman angkatan.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">
+            <img src="images/prize_3d.png" alt="Sesi Games" class="about-icon-img" />
+          </div>
+          <h3>Sesi Games</h3>
+          <p>Berbagai permainan kelompok interaktif dan tantangan seru untuk meramaikan suasana reuni.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">
+            <img src="images/feast_3d.png" alt="Makan Siang Bersama" class="about-icon-img" />
+          </div>
+          <h3>Makan Siang Bersama</h3>
+          <p>Menikmati makan siang prasmanan dengan menu spesial, sambil bercengkerama dengan sahabat lama.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">
+            <img src="images/camera_3d.png" alt="Foto Bersama" class="about-icon-img" />
+          </div>
+          <h3>Foto Bersama</h3>
+          <p>Abadikan momen kebersamaan reuni akbar angkatan Math 09 dalam sesi foto bersama yang ikonik.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RUNDOWN ===== -->
+  <section id="rundown" class="section-dark">
+    <div class="container">
+      <div class="section-tag reveal">Agenda</div>
+      <h2 class="section-title reveal">Rundown Acara</h2>
+      <div class="timeline reveal">
+        <div class="timeline-item">
+          <div class="timeline-time">09.50 - 10.20</div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-body">
+            <h4>Registrasi</h4>
+            <p>Pendaftaran ulang peserta dan ramah tamah awal.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">10.20 - 10.30</div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-body">
+            <h4>Pembukaan</h4>
+            <p>Pembukaan resmi reuni lengkap dengan doa pembuka bersama.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">10.30 - 10.40</div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-body">
+            <h4>Sambutan Ketua Angkatan</h4>
+            <p>Sepatah kata sambutan hangat dari Ketua Angkatan Math UI 2009.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">10.40 - 11.20</div>
+          <div class="timeline-dot gold-dot"></div>
+          <div class="timeline-body highlight">
+            <h4>Sesi Games (Kelompok &amp; Individu)</h4>
+            <p>Keseruan berbagai permainan kelompok interaktif dan kuis individu dengan hadiah menarik.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">11.20 - 11.30</div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-body">
+            <h4>Foto Bersama</h4>
+            <p>Mengabadikan kenangan reuni angkatan Math UI 2009 dalam sesi foto bersama.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">11.30 - 11.40</div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-body">
+            <h4>Penutupan dan Doa</h4>
+            <p>Doa bersama serta penutupan sesi formal reuni.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">11.40 - 12.30</div>
+          <div class="timeline-dot gold-dot"></div>
+          <div class="timeline-body highlight">
+            <h4>Makan Bersama &amp; Acara Bebas</h4>
+            <p>Menikmati hidangan makan siang prasmanan, Sholat Dzuhur, dan mengobrol santai.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">12.30 - 13.00</div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-body">
+            <h4>Pembagian Souvenir</h4>
+            <p>Pembagian souvenir eksklusif sebagai kenang-kenangan reuni Math UI 2009.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BIAYA & REGISTRASI ===== -->
+  <section id="biaya" class="section-light">
+    <div class="container">
+      <div class="section-tag reveal">Registrasi</div>
+      <h2 class="section-title reveal">Biaya & Cara Daftar</h2>
+      <p class="section-desc reveal">Yuk, daftarkan dirimu segera! Konfirmasi kehadiranmu sangat membantu panitia dalam mempersiapkan konsumsi dan souvenir terbaik bagi seluruh sahabat.</p>
+      <div class="pricing-cards reveal">
+        <div class="price-card">
+          <div class="price-badge badge-gold">Utama</div>
+          <div class="price-label">Dewasa &amp; Anak 9+ Tahun</div>
+          <div class="price-amount">Rp 125.000</div>
+        </div>
+        <div class="price-card">
+          <div class="price-badge">Anak</div>
+          <div class="price-label">Usia 5 – 8 Tahun</div>
+          <div class="price-amount">Rp 50.000</div>
+        </div>
+        <div class="price-card">
+          <div class="price-badge">Balita</div>
+          <div class="price-label">Di Bawah 5 Tahun (&lt; 5 th)</div>
+          <div class="price-amount">Free</div>
+        </div>
+      </div>
+      <div class="payment-info reveal">
+        <h4>&#128176; Pembayaran via Transfer</h4>
+        <p>Bank Jago &bull; <strong>503726475652</strong> &bull; a.n. <strong>Danang Dwi Kurniawan</strong></p>
+        <p style="margin-bottom: 20px;">Setelah transfer, konfirmasi ke WhatsApp: <a href="https://wa.me/6281234567890" target="_blank"
+            id="link-wa-konfirmasi"><strong>0812-3456-7890</strong></a></p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdFpVgBOd-yaCvCnEdMHhne5CD_cT43ufvmAA6pFFX0t64EDw/viewform" target="_blank" rel="noopener noreferrer" class="btn-primary" id="btn-isi-formulir" style="margin-top: 8px;">Daftar &amp; Isi Formulir Pendaftaran</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LOKASI ===== -->
+  <section id="lokasi" class="section-dark">
+    <div class="container">
+      <div class="section-tag reveal">Lokasi</div>
+      <h2 class="section-title reveal">Lokasi Acara</h2>
+      <p class="section-desc reveal">Rumah Makan Lesehan Pondok Laras, Cimanggis, Depok</p>
+      <div class="map-wrapper reveal">
+        <iframe id="google-maps-embed"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.340620869389!2d106.85104077508216!3d-6.354884193635293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ec5cb41ed3df%3A0xdfd6d8d2eb933747!2sRumah%20Makan%20Lesehan%20Pondok%20Laras!5e0!3m2!1sid!2sid!4v1715400000000!5m2!1sid!2sid"
+          width="100%" height="420" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade" title="Lokasi Pondok Laras Depok">
+        </iframe>
+      </div>
+      <div class="location-info reveal">
+        <div class="loc-item">
+          <span class="loc-icon">&#128205;</span>
+          <div>
+            <strong>Alamat</strong>
+            <p>Pondok Laras, Kota Depok,<br />Jawa Barat</p>
+          </div>
+        </div>
+        <div class="loc-item">
+          <span class="loc-icon">&#128663;</span>
+          <div>
+            <strong>Dari Jakarta</strong>
+            <p>Arah Jalan Komjen Pol M Jasin (Akses UI), Kelapa Dua, Cimanggis.</p>
+          </div>
+        </div>
+        <div class="loc-item">
+          <span class="loc-icon">&#128652;</span>
+          <div>
+            <strong>Transportasi Umum</strong>
+            <p>Stasiun KRL UI/UP, dilanjutkan dengan angkot 112 atau ojek online (±10 menit).</p>
+          </div>
+        </div>
+        <div class="loc-item">
+          <span class="loc-icon">&#128664;</span>
+          <div>
+            <strong>Parkir</strong>
+            <p>Tersedia area parkir yang luas di dalam kawasan restoran untuk mobil dan motor.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== FOOTER ===== -->
+  <footer id="footer">
+    <div class="container">
+      <p class="footer-sub" style="margin-top: 16px;">Alumni Matematika FMIPA Universitas Indonesia &bull; Angkatan 2009
+      </p>
+      <div class="footer-socials">
+        <a href="https://instagram.com/matek09ui" target="_blank" id="link-footer-ig" aria-label="Instagram">&#128247;
+          Instagram</a>
+        <a href="https://wa.me/6281234567890" target="_blank" id="link-footer-wa" aria-label="WhatsApp">&#128222;
+          WhatsApp</a>
+        <a href="mailto:reunimatek09@gmail.com" id="link-footer-email" aria-label="Email">&#128139; Email</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 Panitia Reuni Math UI 09 &bull; Dibuat dengan &#10084; oleh Alumni</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
