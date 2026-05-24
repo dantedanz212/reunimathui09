@@ -5,7 +5,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Reuni Math UI 09 (Preview)</title>
-  <link rel="icon" type="image/png" href="images/makara_fmipa.png" />
   <meta name="description"
     content="Reuni akbar alumni Matematika FMIPA Universitas Indonesia Angkatan 2009. Satu dekade lebih, satu cerita bersama." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -75,7 +74,6 @@ img { max-width: 100%; display: block; }
 .nav-brand {
   display: flex; align-items: center; gap: 12px;
 }
-.nav-logo { height: 42px; width: auto; object-fit: contain; }
 .brand-3lines {
   display: flex; flex-direction: column;
   font-family: var(--font-head); font-size: 0.85rem; font-weight: 700;
@@ -126,7 +124,6 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 8px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25), 0 0 30px rgba(201, 168, 76, 0.3);
   border: 3px solid var(--gold);
   animation: float 6s ease-in-out infinite;
@@ -527,7 +524,7 @@ img { max-width: 100%; display: block; }
   <nav id="navbar">
     <div class="nav-inner">
       <div class="nav-brand">
-        <img src="images/logo_fmipa.png" alt="Logo FMIPA" class="nav-logo" />
+        <span style="font-size: 2.2rem; margin-right: 8px;">🏫</span>
         <div class="brand-3lines">
           <span>Fakultas <span class="gold">Matematika</span></span>
           <span>dan Ilmu Pengetahuan</span>
@@ -551,8 +548,8 @@ img { max-width: 100%; display: block; }
     <canvas id="particle-canvas"></canvas>
     <div class="hero-inner">
       <div class="hero-content">
-        <div class="hero-image reveal">
-          <img src="images/makara_fmipa.png" alt="Makara 2009" class="hero-makara-img" />
+        <div class="hero-image reveal" style="font-size: 4.5rem; line-height: 130px; display: flex; align-items: center; justify-content: center;">
+          🎓
         </div>
         <div class="hero-badge reveal">Reuni Akbar &bull; 2026</div>
         <h1 class="hero-title reveal">
@@ -614,7 +611,7 @@ img { max-width: 100%; display: block; }
       <h2 class="section-title reveal">17th of Friendship Math UI 2009</h2>
       <div class="about-content reveal">
         <div class="about-image-wrapper">
-          <img src="images/math09.png" alt="Alumni Math 09" class="about-img" />
+          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80" alt="Alumni Math 09" class="about-img" />
         </div>
         <div class="about-text">
           <p class="about-desc">
@@ -633,29 +630,29 @@ img { max-width: 100%; display: block; }
       </div>
       <div class="about-cards reveal">
         <div class="about-card">
-          <div class="about-icon">
-            <img src="images/family_3d.png" alt="Sesi Nostalgia" class="about-icon-img" />
+          <div class="about-icon" style="font-size: 3.5rem; line-height: 80px; margin-bottom: 18px;">
+            👥
           </div>
           <h3>Sesi Nostalgia</h3>
           <p>Kenang kembali masa kuliah lewat obrolan hangat, bertukar cerita seru, dan membuka memori lama bersama teman angkatan.</p>
         </div>
         <div class="about-card">
-          <div class="about-icon">
-            <img src="images/prize_3d.png" alt="Sesi Games" class="about-icon-img" />
+          <div class="about-icon" style="font-size: 3.5rem; line-height: 80px; margin-bottom: 18px;">
+            🏆
           </div>
           <h3>Sesi Games</h3>
           <p>Berbagai permainan kelompok interaktif dan tantangan seru untuk meramaikan suasana reuni.</p>
         </div>
         <div class="about-card">
-          <div class="about-icon">
-            <img src="images/feast_3d.png" alt="Makan Siang Bersama" class="about-icon-img" />
+          <div class="about-icon" style="font-size: 3.5rem; line-height: 80px; margin-bottom: 18px;">
+            🍲
           </div>
           <h3>Makan Siang Bersama</h3>
           <p>Menikmati makan siang prasmanan dengan menu spesial, sambil bercengkerama dengan sahabat lama.</p>
         </div>
         <div class="about-card">
-          <div class="about-icon">
-            <img src="images/camera_3d.png" alt="Foto Bersama" class="about-icon-img" />
+          <div class="about-icon" style="font-size: 3.5rem; line-height: 80px; margin-bottom: 18px;">
+            📸
           </div>
           <h3>Foto Bersama</h3>
           <p>Abadikan momen kebersamaan reuni akbar angkatan Math 09 dalam sesi foto bersama yang ikonik.</p>
@@ -907,8 +904,6 @@ function resizeCanvas() {
 resizeCanvas();
 window.addEventListener('resize', resizeCanvas);
 
-function randomBetween(a, b) { return a + Math.random() * (b - a); }
-
 // Math symbols for particles
 const mathSymbols = ['∑', 'π', '∫', '∞', 'θ', 'λ', 'μ', '∂', '√', '≡', 'φ', 'Δ'];
 
@@ -937,6 +932,8 @@ class Particle {
     ctx.restore();
   }
 }
+
+function randomBetween(a, b) { return a + Math.random() * (b - a); }
 
 // Create particles
 for (let i = 0; i < 55; i++) particles.push(new Particle());
