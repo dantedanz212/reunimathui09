@@ -560,3 +560,13 @@ img { max-width: 100%; display: block; }
     height: 1px;
   }
 }
+
+#lokasi {
+  padding-top: 110px;
+}
+
+@media (max-width: 576px) {
+  #lokasi {
+    padding-top: 140px;
+  }
+}
