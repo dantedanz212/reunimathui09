@@ -3,7 +3,7 @@
    ============================================================ */
 
 // ---- CONFIG: Masukkan jumlah alumni yang sudah mendaftar di sini ----
-const TOTAL_ALUMNI_PENDAFTAR = 48; // Ganti angka ini sesuai dengan jumlah pendaftar aktual!
+const TOTAL_ALUMNI_PENDAFTAR = 0; // Ganti angka ini sesuai dengan jumlah pendaftar aktual!
 
 // ---- Navbar scroll effect ----
 const navbar = document.getElementById('navbar');

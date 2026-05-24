@@ -503,43 +503,60 @@ img { max-width: 100%; display: block; }
 }
 
 /* ============================================================
-   STATISTICS SECTION
+   OVERLAPPING STATISTICS BAR
    ============================================================ */
-.stats-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 28px;
-  max-width: 860px;
+.stats-overlap-wrapper {
+  max-width: 900px;
   margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 20;
+  height: 0;
 }
-.stat-card {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(201, 168, 76, 0.20);
+.stats-overlap-bar {
+  background: linear-gradient(135deg, #ECCB6C 0%, #C9A84C 100%);
   border-radius: var(--radius);
-  padding: 40px 32px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 36px 24px;
+  transform: translateY(-50%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+.stats-overlap-item {
+  flex: 1;
   text-align: center;
-  backdrop-filter: blur(10px);
-  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
 }
-.stat-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(201, 168, 76, 0.55);
-  box-shadow: 0 12px 40px rgba(201, 168, 76, 0.15);
-}
-.stat-icon {
-  font-size: 2.8rem;
-  margin-bottom: 16px;
-  display: block;
-}
-.stat-value {
+.stats-overlap-val {
   font-family: var(--font-head);
-  font-size: clamp(2rem, 4vw, 2.6rem);
-  font-weight: 700;
-  color: var(--gold);
-  margin-bottom: 8px;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 900;
+  color: #0D1B3E;
+  margin-bottom: 6px;
+  letter-spacing: -0.5px;
 }
-.stat-label {
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.65);
-  line-height: 1.6;
+.stats-overlap-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: rgba(13, 27, 62, 0.75);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+.stats-overlap-divider {
+  width: 1px;
+  height: 60px;
+  background: rgba(13, 27, 62, 0.15);
+}
+
+@media (max-width: 576px) {
+  .stats-overlap-bar {
+    flex-direction: column;
+    gap: 20px;
+    padding: 24px 16px;
+  }
+  .stats-overlap-divider {
+    width: 80%;
+    height: 1px;
+  }
 }
