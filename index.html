@@ -95,11 +95,6 @@
           <div class="countdown-sep">:</div>
           <div class="countdown-item"><span id="cd-detik">--</span><label>Detik</label></div>
         </div>
-        <!-- Registration Counter -->
-        <div class="registration-counter reveal" style="margin-top: 24px; margin-bottom: 12px;">
-          <span class="counter-pulse"></span>
-          <span class="counter-text"><strong id="registered-count">0</strong> Alumni Telah Mendaftar</span>
-        </div>
         <div class="hero-cta reveal">
           <a href="#acara" class="btn-primary" id="btn-hero-selengkapnya">Selengkapnya</a>
         </div>
@@ -279,29 +274,25 @@
     </div>
   </section>
 
-  <!-- ===== STATISTIK ===== -->
-  <section id="statistik" class="section-dark" style="background: linear-gradient(135deg, #090f22 0%, var(--navy) 100%); border-top: 1px solid rgba(201,168,76,.1); border-bottom: 1px solid rgba(201,168,76,.1);">
-    <div class="container">
-      <div style="text-align: center;">
-        <div class="section-tag reveal">Statistik Terkini</div>
-        <h2 class="section-title reveal" style="color: var(--white); margin-bottom: 48px;">Perkembangan Reuni</h2>
+  <!-- ===== STATS OVERLAP BAR ===== -->
+  <div class="stats-overlap-wrapper reveal">
+    <div class="stats-overlap-bar">
+      <!-- Item 1: Total Donasi -->
+      <div class="stats-overlap-item">
+        <div class="stats-overlap-val">Rp 7.400.000</div>
+        <div class="stats-overlap-label">Total Donasi Terkumpul</div>
       </div>
-      <div class="stats-cards reveal">
-        <!-- Card 1: Total Donasi -->
-        <div class="stat-card">
-          <span class="stat-icon">💰</span>
-          <div class="stat-value">Rp 7.400.000</div>
-          <div class="stat-label">Total Donasi Sukarela Terkumpul</div>
-        </div>
-        <!-- Card 2: Alumni Terdaftar -->
-        <div class="stat-card">
-          <span class="stat-icon">🎓</span>
-          <div class="stat-value"><span id="stat-registered-count">0</span> Alumni</div>
-          <div class="stat-label">Sahabat Terdaftar & Konfirmasi Kehadiran</div>
-        </div>
+      
+      <!-- Divider -->
+      <div class="stats-overlap-divider"></div>
+      
+      <!-- Item 2: Alumni Terdaftar -->
+      <div class="stats-overlap-item">
+        <div class="stats-overlap-val"><span id="stat-registered-count">0</span></div>
+        <div class="stats-overlap-label">Alumni Mendaftar</div>
       </div>
     </div>
-  </section>
+  </div>
 
   <!-- ===== LOKASI ===== -->
   <section id="lokasi" class="section-dark">
