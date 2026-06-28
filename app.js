@@ -2,8 +2,12 @@
    app.js — Reuni Matek 09
    ============================================================ */
 
-// ---- CONFIG: Masukkan jumlah alumni yang sudah mendaftar di sini ----
-const TOTAL_ALUMNI_PENDAFTAR = 14; // Ganti angka ini sesuai dengan jumlah pendaftar aktual!
+// ---- CONFIG: URL Web App Google Apps Script ----
+// URL ini didapat setelah melakukan "Deploy as Web App" di Google Apps Script
+const GOOGLE_APP_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwk_HIEjGeA1a9H6ylpNnNdkOCSL8vyK86QhQ5u7ZZWpVcYeQOzWOr1YkCJ-w8zlK1Nvw/exec";
+
+// Nilai awal, akan diubah otomatis secara real-time (menggunakan let agar bisa diubah)
+let TOTAL_ALUMNI_PENDAFTAR = 14; // Angka sementara sebelum data asli termuat
 
 // ---- Navbar scroll effect ----
 const navbar = document.getElementById('navbar');
@@ -157,5 +161,27 @@ function animateCounter() {
 }
 // Trigger counter animation once loaded
 window.addEventListener('DOMContentLoaded', () => {
-  setTimeout(animateCounter, 800);
+  // Fungsi untuk mengambil data secara real-time dari server Google
+  async function fetchAlumniCount() {
+    if (!GOOGLE_APP_SCRIPT_URL) {
+      // Jika URL kosong, jalankan animasi menggunakan angka fallback (14)
+      setTimeout(animateCounter, 800);
+      return;
+    }
+    
+    try {
+      const response = await fetch(GOOGLE_APP_SCRIPT_URL);
+      const data = await response.json();
+      if (data && data.count !== undefined) {
+        TOTAL_ALUMNI_PENDAFTAR = data.count; // Mengupdate angka dengan data asli secara real-time
+      }
+    } catch (error) {
+      console.error("Gagal mengambil data alumni dari Google:", error);
+    }
+    
+    // Jalankan animasi setelah data berhasil diambil
+    setTimeout(animateCounter, 100);
+  }
+  
+  fetchAlumniCount();
 });
