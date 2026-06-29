@@ -4,7 +4,7 @@
 
 // ---- CONFIG: URL Web App Google Apps Script ----
 // URL ini didapat setelah melakukan "Deploy as Web App" di Google Apps Script
-const GOOGLE_APP_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwk_HIEjGeA1a9H6ylpNnNdkOCSL8vyK86QhQ5u7ZZWpVcYeQOzWOr1YkCJ-w8zlK1Nvw/exec";
+const GOOGLE_APP_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwWON3BnhXVTFb7vxggvyL4VGY0GWeBGtnNB4FxvaWOHcw9b1K1mt1rN77QFeaN2vM7/exec";
 
 // Nilai awal, akan diubah otomatis secara real-time (menggunakan let agar bisa diubah)
 let TOTAL_ALUMNI_PENDAFTAR = 14; // Angka sementara sebelum data asli termuat
